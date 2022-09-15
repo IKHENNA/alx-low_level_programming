@@ -6,7 +6,8 @@
  *
  *Return: 1 for lowercase character and 0 for anything else
  */
-int_islower(int c)
+
+int _islower(int c)
 
 
 {
