@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "main.h"
 /**
  *print_array - prints n elements of an array of integers
@@ -20,7 +21,7 @@ void print_array(int *a, int n)
 
 		else
 
-			printf(", %d", a[i]);
+			Printf(", %d", a[i]);
 	}
 
 	printf("\n");
