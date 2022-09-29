@@ -7,7 +7,7 @@
  *
  * Return: -1 or sqrt of c
  */
-int _sqrt_check(int g, int c)
+int sqrt_check(int g, int c)
 {
 	if (g * g == c)
 		return (g);
