@@ -1,8 +1,8 @@
-#include <unistd.h>
+#include "main.h"
 /**
  *
  *
  */
-void _puts(char *s)
+int _putchar(char c)
 {
 }
