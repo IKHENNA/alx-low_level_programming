@@ -2,44 +2,47 @@
 #include <stdlib.h>
 
 /**
- * string_nconcat - a function that concatenates two strings.
- * @s1: the first string
- * @s2: the second string
- * @n: the maximum number of bytes of s2 to concatenate to s1
+ * string_nconcat - concatenates two strings.
+ * @s1: first string to copy
+ * @s2: second string to copy
+ * @n: number of bytes of s2 to copy
  *
- * Return: if the the function fails - NULL
- * if not than a pointer to th concatenated space in memory.
+ * Return: char pointer to newly allocated place in memory
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *concat;
+	unsigned int i, j, k;
 
-	unsigned int len = n, i;
+	char *s;
 
 	if (s1 == NULL)
-		s1 = "";
+		i = 0;
 
+	else
+	{
+
+	for (i = 0; s1[i]; i++)
+		;
+	}
 	if (s2 == NULL)
-		s2 = "";
+		j = 0;
+	else
+	{
+		for (j = 0; s2[j]; j++)
+			;
+	}
+	if (j > n)
+		j = n;
+	s = malloc(sizeof(char) * (i + j + 1));
+	if (s == NULL)
 
-	for (i = 0; s1[i]; i++)
-		len++;
+	return (NULL);
 
-	concat = malloc(sizeof(char) * (len + 1));
+	for (k = 0; k < i; k++)
+		s[k] = s1[k];
 
-	if (concat == NULL)
-		return (NULL);
-
-	len = 0;
-
-	for (i = 0; s1[i]; i++)
-		concat[len++] = s2[i];
-
-	for (i = 0; s2[i] && i < n; i++)
-		concat[len++] = s2[i];
-
-	concat[len] = '\0';
-
-	return (concat);
-
+	for (k = 0; k < j; k++)
+		s[k + i] = s2[k];
+	s[i + j] = '\0';
+	return (s);
 }
